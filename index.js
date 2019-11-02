@@ -26,8 +26,8 @@ const main = async () => {
         await firstPrs.getRecentPRs();
         await firstPrs.getFirstPRs();
         Object.values(firstPrs.firstPrs).forEach(firstPr => {
-            console.log(firstPr.data.html_url);
-            console.log(`  @${firstPr.data.user.login} | ${firstPr.first}`);
+            console.log(`  ${firstPr.data.html_url}`);
+            console.log(`    @${firstPr.data.user.login} | ${firstPr.first}`);
         });
     }
 };
