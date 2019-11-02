@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const firstPRs = require('./src/firstPRs');
 const token = require('./token');
 
@@ -16,7 +17,7 @@ const repos = [
 
 const main = async () => {
     for (let i = 0; i < repos.length; i++) {
-        console.log(repos[i]);
+        console.log(chalk.bold.blue(repos[i]));
         const firstPrs = new firstPRs({
             repo: repos[i],
             githubToken: token,
@@ -26,8 +27,8 @@ const main = async () => {
         await firstPrs.getRecentPRs();
         await firstPrs.getFirstPRs();
         Object.values(firstPrs.firstPrs).forEach(firstPr => {
-            console.log(`  ${firstPr.data.html_url}`);
-            console.log(`    @${firstPr.data.user.login} | ${firstPr.first}`);
+            console.log(chalk.green(`  ${firstPr.data.html_url}`));
+            console.log(chalk.green(`    @${firstPr.data.user.login} | ${firstPr.first}`));
         });
     }
 };
