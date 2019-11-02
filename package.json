@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/MattIPv4/github-first-contributions#readme",
   "dependencies": {
-    "@octokit/rest": "^16.34.1"
+    "@octokit/rest": "^16.34.1",
+    "jsdom": "^15.2.0",
+    "node-fetch": "^2.6.0"
   }
 }
