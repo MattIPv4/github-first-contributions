@@ -7,12 +7,12 @@ const repos = [
     'digitalocean/godo',
     'digitalocean/droplet_kit',
     'digitalocean/nginxconfig.io',
+    'digitalocean/hacktoberfest',
     'do-community/dns-tool',
     'do-community/kubernetes-tool',
     'do-community/do-bulma',
     'do-community/do-vue',
     'terraform-providers/terraform-provider-digitalocean',
-    'raise-dev/hacktoberfest',
 ];
 
 const main = async () => {

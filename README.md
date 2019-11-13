@@ -1,21 +1,15 @@
 <!-- Source: https://github.com/MattIPv4/template/blob/master/README.md -->
 
 <!-- Title -->
-<h1 align="center" id="Template">
-    <!-- Text only -->
-    <!-- Template -->
-    <!-- or, Image logo -->
-    <img src="https://via.placeholder.com/500x60.png?text=Template" alt="Template" width="500"/>
+<h1 align="center" id="github-first-contributions">
+    GitHub First Contributions
 </h1>
 
 <!-- Tag line -->
-<h3 align="center">The template README (and other files) for my GitHub repositories.</h3>
+<h3 align="center">A little script that scrapes GitHub hovercards on PRs to see if they're first contributions.</h3>
 
 <!-- Badges -->
 <p align="center">
-    <a href="https://shields.io/" target="_blank">
-        <img src="https://img.shields.io/badge/style-flat--square-green.svg?style=flat-square" alt="Style"/>
-    </a>
     <a href="https://github.com/users/MattIPv4/sponsorship" target="_blank">
         <img src="https://img.shields.io/badge/GitHub%20Sponsors-MattIPv4-blue.svg?style=flat-square" alt="GitHub Sponsors"/>
     </a>
@@ -30,9 +24,15 @@
 ----
 
 <!-- Content -->
-## Hello
+## Why scraping, not the API?
 
-This repository stores my template README file along with other useful default & template files for my GitHub repositories.
+You may have seen this on a user's hovercard in a PR before: "their first in @org" or "their first ever".
+This information is readily available in the HTML view of the pull request, but GitHub doesn't reveal this data in the
+ API response for the PR.
+
+I wanted to get this data for a program we run at work and so instead of making *loads* of API requests to GitHub to get
+ all the PRs a user has ever made etc. to determine if the PR is a first, I simply wrote this script that just scrapes
+ the HTML hovercard for the user in each PR.
 
 <!-- Contributing -->
 ## Contributing
