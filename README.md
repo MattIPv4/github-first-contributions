@@ -34,6 +34,8 @@ I wanted to get this data for a program we run at work and so instead of making 
  all the PRs a user has ever made etc. to determine if the PR is a first, I simply wrote this script that just scrapes
  the HTML hovercard for the user in each PR.
 
+![Example of the program running](example.png)
+
 <!-- Contributing -->
 ## Contributing
 
