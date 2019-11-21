@@ -22,6 +22,9 @@ class firstPR {
         const urlElm = document.querySelector('.pull-discussion-timeline .js-comment-container:first-of-type a.author');
         const url = urlElm.getAttribute('data-hovercard-url');
 
+        // dependabot doesn't have a hovercard
+        if (!url) return null;
+
         // Construct full URL
         return `https://github.com${url}` +
             `&subject=${encodeURIComponent(subjectTag)}` +
@@ -34,6 +37,7 @@ class firstPR {
 
         // Get the hovercard URL
         const hovercardUrl = await this.getHoverCardURL();
+        if (!hovercardUrl) return this.first = null;
 
         // Fetch the hovercard HTML
         const hovercardHtml = await (await fetch(hovercardUrl, {

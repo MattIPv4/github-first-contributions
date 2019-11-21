@@ -8,8 +8,13 @@ const repos = [
     'digitalocean/droplet_kit',
     'digitalocean/nginxconfig.io',
     'digitalocean/hacktoberfest',
+    'digitalocean/go-qemu',
+    'digitalocean/go-libvirt',
+    'digitalocean/digitalocean-cloud-controller-manager',
+    'digitalocean/firebolt',
     'do-community/dns-tool',
     'do-community/kubernetes-tool',
+    'do-community/glob-tool',
     'do-community/do-bulma',
     'do-community/do-vue',
     'terraform-providers/terraform-provider-digitalocean',
@@ -22,7 +27,7 @@ const main = async () => {
             repo: repos[i],
             githubToken: token,
             mergedOnly: true,
-            prCount: 15,
+            prCount: 20,
         });
         await firstPrs.getRecentPRs();
         await firstPrs.getFirstPRs();
