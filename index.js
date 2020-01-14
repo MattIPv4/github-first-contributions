@@ -27,7 +27,7 @@ const main = async () => {
             repo: repos[i],
             githubToken: token,
             mergedOnly: true,
-            prCount: 20,
+            prCount: 30,
         });
         await firstPrs.getRecentPRs();
         await firstPrs.getFirstPRs();

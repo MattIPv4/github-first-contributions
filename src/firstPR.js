@@ -27,7 +27,7 @@ class firstPR {
 
         // Construct full URL
         return `https://github.com${url}` +
-            `&subject=${encodeURIComponent(subjectTag)}` +
+            `?subject=${encodeURIComponent(subjectTag)}` +
             `&current_path=${encodeURIComponent(this.data.html_url.replace('https://github.com', ''))}`
     }
 

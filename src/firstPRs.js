@@ -1,4 +1,5 @@
 const Octokit = require('@octokit/rest');
+const chalk = require('chalk');
 const firstPR = require('./firstPR');
 
 class firstPRs {
@@ -31,11 +32,22 @@ class firstPRs {
 
     async getFirstPRs () {
         const prs = Object.values(this.prs);
+        process.stdout.write(chalk.blue('> '));
         for (let i = 0; i < prs.length; i++) {
-            const firstPr = new firstPR(prs[i]);
-            await firstPr.getContribState();
-            if (firstPr.first) this.firstPrs[firstPr.data.id] = firstPr;
+            try {
+                const firstPr = new firstPR(prs[i]);
+                await firstPr.getContribState();
+                if (firstPr.first) {
+                    this.firstPrs[firstPr.data.id] = firstPr;
+                    process.stdout.write(chalk.green.bold('.'));
+                } else {
+                    process.stdout.write(chalk.yellow('.'));
+                }
+            } catch {
+                process.stdout.write(chalk.red('.'));
+            }
         }
+        process.stdout.write('\n');
     }
 }
 
