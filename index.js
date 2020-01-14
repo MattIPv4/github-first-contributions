@@ -20,6 +20,10 @@ const repos = [
     'terraform-providers/terraform-provider-digitalocean',
 ];
 
+const date = new Date();
+date.setMonth(date.getMonth() - 2);
+const newerThan = date.toISOString().split('T')[0];
+
 const main = async () => {
     for (let i = 0; i < repos.length; i++) {
         console.log(chalk.bold.blue(repos[i]));
@@ -27,6 +31,7 @@ const main = async () => {
             repo: repos[i],
             githubToken: token,
             mergedOnly: true,
+            newerThan,
             prCount: 30,
         });
         await firstPrs.getRecentPRs();

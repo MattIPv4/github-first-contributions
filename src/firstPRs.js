@@ -8,6 +8,7 @@ class firstPRs {
         this.octokit = new Octokit({auth: opts.githubToken});
         this.mergedOnly = opts.mergedOnly || true;
         this.prCount = opts.prCount || 10;
+        this.newerThan = opts.newerThan || null;
         this.prs = {};
         this.firstPrs = {};
     }
@@ -19,6 +20,7 @@ class firstPRs {
             `repo:${this.repo}`,
         ];
         if (this.mergedOnly) parts.push('is:merged');
+        if (this.newerThan) parts.push(`created:>${this.newerThan}`);
         const data = await this.octokit.search.issuesAndPullRequests({
             q: parts.join(' '),
             sort: 'created',
