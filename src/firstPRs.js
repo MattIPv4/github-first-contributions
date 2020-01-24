@@ -34,14 +34,15 @@ class firstPRs {
 
     async getFirstPRs () {
         const prs = Object.values(this.prs);
-        process.stdout.write(chalk.blue('> '));
+        if (!prs.length) return;
+        process.stdout.write(chalk.blue(`> ${prs.length} `));
         for (let i = 0; i < prs.length; i++) {
             try {
                 const firstPr = new firstPR(prs[i]);
                 await firstPr.getContribState();
                 if (firstPr.first) {
                     this.firstPrs[firstPr.data.id] = firstPr;
-                    process.stdout.write(chalk.green.bold('.'));
+                    process.stdout.write(chalk.bgGreenBright.blue.bold('.'));
                 } else {
                     process.stdout.write(chalk.yellow('.'));
                 }
