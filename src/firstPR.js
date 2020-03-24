@@ -10,7 +10,13 @@ class firstPR {
 
     async getHoverCardURL() {
         // Get full PR HTML page
-        const htmlPr = await (await fetch(this.data.html_url)).text();
+        const htmlPr = await (await fetch(this.data.html_url, {
+            headers: {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;',
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
+                'Host': 'github.com',
+            },
+        })).text();
         const dom = new JSDOM(htmlPr);
         const document = dom.window.document;
 
@@ -41,7 +47,13 @@ class firstPR {
 
         // Fetch the hovercard HTML
         const hovercardHtml = await (await fetch(hovercardUrl, {
-            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            headers: {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;',
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:75.0) Gecko/20100101 Firefox/75.0',
+                'Host': 'github.com',
+                'Referer': this.data.html_url,
+                'X-Requested-With': 'XMLHttpRequest',
+            },
         })).text();
 
         // Get opened PR line & return

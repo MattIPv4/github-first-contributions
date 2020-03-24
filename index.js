@@ -21,10 +21,11 @@ const repos = [
 ];
 
 const date = new Date();
-date.setMonth(date.getMonth() - 2);
+date.setMonth(date.getMonth() - 1);
 const newerThan = date.toISOString().split('T')[0];
 
 const main = async () => {
+    console.log(chalk.bold.blueBright(`PRs newer than ${newerThan}...\n`));
     for (let i = 0; i < repos.length; i++) {
         console.log(chalk.bold.blue(repos[i]));
         const firstPrs = new firstPRs({

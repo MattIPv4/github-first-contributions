@@ -2,6 +2,8 @@ const Octokit = require('@octokit/rest');
 const chalk = require('chalk');
 const firstPR = require('./firstPR');
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 class firstPRs {
     constructor(opts) {
         this.repo = opts.repo;
@@ -49,6 +51,7 @@ class firstPRs {
             } catch {
                 process.stdout.write(chalk.red('.'));
             }
+            await sleep(500);
         }
         process.stdout.write('\n');
     }
