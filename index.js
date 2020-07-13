@@ -12,11 +12,28 @@ const repos = [
     'digitalocean/go-libvirt',
     'digitalocean/digitalocean-cloud-controller-manager',
     'digitalocean/firebolt',
+    'digitalocean/clusterlint',
+    'digitalocean/ceph_exporter',
+    'digitalocean/pynetbox',
+    'digitalocean/do-agent',
+    'digitalocean/prometheus-client-c',
+    'digitalocean/action-doctl',
+    'digitalocean/go-smbios',
+
     'do-community/dns-tool',
     'do-community/kubernetes-tool',
     'do-community/glob-tool',
+    'do-community/bandwidth-tool',
+    'do-community/hub-for-good-list',
+    'do-community/glob-tool-embed',
+    'do-community/dns-tool-embed',
     'do-community/do-bulma',
     'do-community/do-vue',
+    'do-community/example-doctl-action',
+    'do-community/do-ansible-inventory',
+    'do-community/kubectl-doweb',
+    'do-community/ansible-playbooks',
+
     'terraform-providers/terraform-provider-digitalocean',
 ];
 
