@@ -19,6 +19,7 @@ const repos = [
     'digitalocean/prometheus-client-c',
     'digitalocean/action-doctl',
     'digitalocean/go-smbios',
+    'digitalocean/terraform-provider-digitalocean',
 
     'do-community/dns-tool',
     'do-community/kubernetes-tool',
@@ -33,8 +34,6 @@ const repos = [
     'do-community/do-ansible-inventory',
     'do-community/kubectl-doweb',
     'do-community/ansible-playbooks',
-
-    'terraform-providers/terraform-provider-digitalocean',
 ];
 
 const date = new Date();
