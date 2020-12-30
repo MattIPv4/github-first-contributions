@@ -106,7 +106,10 @@ const newerThan = date.toISOString().split('T')[0];
 
 const main = async () => {
     console.log(chalk.bold.blueBright(`PRs newer than ${newerThan}...\n`));
+
     for (let i = 0; i < repos.length; i++) {
+        const start = Date.now();
+
         console.log(chalk.bold.blue(repos[i]));
         const firstPrs = new firstPRs({
             repo: repos[i],
@@ -121,6 +124,9 @@ const main = async () => {
             console.log(chalk.green(`  ${firstPr.data.html_url}`));
             console.log(chalk.green(`    @${firstPr.data.user.login} | ${firstPr.first}`));
         });
+
+        // Ensure we stay below 30reqs/min
+        await new Promise(resolve => setTimeout(resolve, 2000 - (Date.now() - start)));
     }
 };
 
