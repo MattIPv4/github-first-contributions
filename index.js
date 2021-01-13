@@ -126,7 +126,7 @@ const main = async () => {
         });
 
         // Ensure we stay below 30reqs/min
-        await new Promise(resolve => setTimeout(resolve, 2000 - (Date.now() - start)));
+        await new Promise(resolve => setTimeout(resolve, (2000 - (Date.now() - start)) * 1.1));
     }
 };
 
