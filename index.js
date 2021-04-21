@@ -23,7 +23,6 @@ const repos = [
     'digitalocean/clusterlint',
     'digitalocean/captainslog',
     'digitalocean/ceph_exporter',
-    'digitalocean/pynetbox',
     'digitalocean/do-agent',
     'digitalocean/prometheus-client-c',
     'digitalocean/csi-digitalocean',
@@ -35,6 +34,10 @@ const repos = [
     'digitalocean/archimedes',
     'digitalocean/omniauth-digitalocean',
     'digitalocean/kartograph',
+    'digitalocean/gta',
+    'digitalocean/kvm-trace-stats',
+    'digitalocean/doks-debug',
+    'digitalocean/databases',
 
     'digitalocean/terraform-provider-digitalocean',
     'digitalocean/terraform-provider-sendgrid',
