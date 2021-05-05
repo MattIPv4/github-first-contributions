@@ -35,7 +35,7 @@ const repos = [
     'digitalocean/omniauth-digitalocean',
     'digitalocean/kartograph',
     'digitalocean/gta',
-    'digitalocean/kvm-trace-stats',
+    'digitalocean/vmtop',
     'digitalocean/doks-debug',
     'digitalocean/databases',
 
