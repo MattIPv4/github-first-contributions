@@ -96,7 +96,6 @@ const repos = [
     'do-community/creatorlinks',
     'do-community/terraform-ansible-demo',
     'do-community/terraform-sample-digitalocean-architectures',
-    'do-community/hacktoberfest-repo-topic-apply',
     'do-community/dolphin',
     'do-community/python-doctl',
     // 'do-community/cloud_haiku',
