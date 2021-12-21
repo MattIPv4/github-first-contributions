@@ -104,7 +104,7 @@ const repos = [
 ];
 
 const date = new Date();
-date.setMonth(date.getMonth() - 1);
+date.setMonth(date.getMonth() - 2);
 const newerThan = date.toISOString().split('T')[0];
 
 const main = async () => {
