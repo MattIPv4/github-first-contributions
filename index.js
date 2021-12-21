@@ -124,7 +124,7 @@ const main = async () => {
         await firstPrs.getRecentPRs();
         await firstPrs.getFirstPRs();
         Object.values(firstPrs.firstPrs).forEach(firstPr => {
-            console.log(chalk.green(`  ${firstPr.data.html_url}`));
+            console.log(chalk.green(`  ${firstPr.data.html_url} ${firstPr.data.pull_request.merged_at}`));
             console.log(chalk.green(`    @${firstPr.data.user.login} | ${firstPr.first}`));
         });
 
